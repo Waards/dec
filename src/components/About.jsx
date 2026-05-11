@@ -23,63 +23,78 @@ const About = () => {
           className="about-content"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="about-tag">About Us</span>
-          <h2 className="about-title">
-            We Create Digital
-            <span className="highlight"> Experiences</span>
+          <div className="swiss-tag">About Us</div>
+          <h2 className="swiss-title">
+            We Create<br />
+            <span className="swiss-accent">Digital</span><br />
+            Experiences
           </h2>
-          <p className="about-description">
-            We're a passionate team dedicated to crafting exceptional digital products. 
-            With years of experience in web development and design, we transform ideas 
-            into seamless, interactive experiences that captivate users.
-          </p>
-          <p className="about-description">
-            Our approach combines creativity with technical excellence, ensuring every 
-            project we undertake delivers both beauty and functionality.
-          </p>
+          
+          <div className="swiss-grid">
+            <div className="swiss-line"></div>
+            <div className="swiss-content">
+              <p className="swiss-description">
+                We're a passionate team dedicated to crafting exceptional digital products. 
+                With years of experience in web development and design, we transform ideas 
+                into seamless, interactive experiences.
+              </p>
+              <p className="swiss-description">
+                Our approach combines creativity with technical excellence, ensuring every 
+                project delivers both beauty and functionality.
+              </p>
+            </div>
+          </div>
 
-          <div className="about-stats">
+          <div className="swiss-stats">
             {stats.map((stat, index) => (
               <motion.div 
                 key={index}
-                className="stat-item"
+                className="swiss-stat"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ amount: 0.3 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <span className="stat-number">{stat.number}</span>
-                <span className="stat-label">{stat.label}</span>
+                <span className="swiss-stat-number">{stat.number}</span>
+                <span className="swiss-stat-label">{stat.label}</span>
               </motion.div>
             ))}
           </div>
+
+          <a href="/about" className="swiss-button">
+            Learn More
+            <span className="button-arrow">→</span>
+          </a>
         </motion.div>
 
         <motion.div 
           className="about-visual"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="skills-card">
-            <h3 className="skills-title">Our Expertise</h3>
-            <div className="skills-list">
+          <div className="swiss-skills-card">
+            <div className="swiss-header">
+              <h3 className="swiss-skills-title">Our Expertise</h3>
+              <div className="swiss-header-line"></div>
+            </div>
+            <div className="swiss-skills-list">
               {skills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percent">{skill.level}%</span>
+                <div key={index} className="swiss-skill-item">
+                  <div className="swiss-skill-header">
+                    <span className="swiss-skill-name">{skill.name}</span>
+                    <span className="swiss-skill-percent">{skill.level}%</span>
                   </div>
-                  <div className="skill-bar">
+                  <div className="swiss-skill-bar">
                     <motion.div 
-                      className="skill-progress"
+                      className="swiss-skill-progress"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
+                      viewport={{ amount: 0.3 }}
                       transition={{ duration: 1, delay: index * 0.2 }}
                     />
                   </div>
@@ -88,10 +103,9 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-decoration">
-            <div className="deco-circle deco-1"></div>
-            <div className="deco-circle deco-2"></div>
-            <div className="deco-circle deco-3"></div>
+          <div className="swiss-decoration">
+            <div className="swiss-square"></div>
+            <div className="swiss-accent-bar"></div>
           </div>
         </motion.div>
       </div>

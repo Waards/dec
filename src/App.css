@@ -6,7 +6,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
 }
 
 body {
@@ -14,12 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-section[id] {
-  scroll-margin-top: 100px;
+  overflow-y: auto;
 }
 
 #root {
   position: relative;
+  min-height: 100vh;
 }

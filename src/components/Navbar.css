@@ -1,12 +1,12 @@
 .bubble-menu {
   left: 0 !important;
   right: 0 !important;
-  top: 2em !important;
+  top: 0 !important;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 0 2em;
+  gap: 12px;
+  padding: 10px 20px;
   pointer-events: auto;
   z-index: 9999;
   position: fixed !important;
@@ -15,7 +15,7 @@
 }
 
 .bubble-menu .bubble {
-  --bubble-size: 48px;
+  --bubble-size: 44px;
   width: var(--bubble-size);
   height: var(--bubble-size);
   border-radius: 50%;
@@ -36,9 +36,9 @@
   width: auto;
   min-height: var(--bubble-size);
   height: var(--bubble-size);
-  padding: 0 16px;
+  padding: 0 14px;
   border-radius: calc(var(--bubble-size) / 2);
-  gap: 8px;
+  gap: 6px;
   text-decoration: none;
 }
 
@@ -60,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
+  width: 100px;
   height: 100%;
   color: #000;
 }
@@ -84,7 +84,7 @@
 }
 
 .bubble-menu .menu-line {
-  width: 26px;
+  width: 22px;
   height: 2px;
   background: #111;
   border-radius: 2px;
@@ -95,24 +95,84 @@
 }
 
 .bubble-menu .menu-line + .menu-line {
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .bubble-menu .menu-btn.open .menu-line:first-child {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(3.5px) rotate(45deg);
 }
 
 .bubble-menu .menu-btn.open .menu-line:last-child {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-3.5px) rotate(-45deg);
 }
 
 @media (min-width: 768px) {
+  .bubble-menu {
+    padding: 12px 24px;
+    gap: 16px;
+  }
+
   .bubble-menu .bubble {
-    --bubble-size: 56px;
+    --bubble-size: 52px;
   }
 
   .bubble-menu .logo-bubble {
     padding: 0 16px;
+  }
+
+  .bubble-menu .logo-content {
+    width: 120px;
+  }
+
+  .bubble-menu .menu-line {
+    width: 26px;
+  }
+
+  .bubble-menu .menu-line + .menu-line {
+    margin-top: 6px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bubble-menu {
+    padding: 14px 32px;
+    gap: 20px;
+  }
+
+  .bubble-menu .bubble {
+    --bubble-size: 56px;
+  }
+
+  .bubble-menu .logo-content {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bubble-menu {
+    padding: 8px 16px;
+    gap: 10px;
+  }
+
+  .bubble-menu .bubble {
+    --bubble-size: 40px;
+  }
+
+  .bubble-menu .logo-bubble {
+    padding: 0 12px;
+  }
+
+  .bubble-menu .logo-content {
+    width: 80px;
+    font-size: 14px;
+  }
+
+  .bubble-menu .menu-line {
+    width: 20px;
+  }
+
+  .bubble-menu .menu-line + .menu-line {
+    margin-top: 4px;
   }
 }
 
@@ -229,11 +289,12 @@
   .bubble-menu-items {
     padding-top: 0px;
     align-items: flex-start;
-    padding-top: 120px;
+    padding-top: 100px;
   }
 
   .bubble-menu-items .pill-list {
     row-gap: 16px;
+    padding: 0 16px;
   }
 
   .bubble-menu-items .pill-list .pill-col {
@@ -256,5 +317,43 @@
 
   .bubble-menu-items .pill-link:active {
     transform: scale(0.94);
+  }
+}
+
+@media (max-width: 480px) {
+  .bubble-menu-items {
+    padding-top: 80px;
+  }
+
+  .bubble-menu-items .pill-list {
+    padding: 0 12px;
+    row-gap: 12px;
+  }
+
+  .bubble-menu-items .pill-link {
+    font-size: 1.2rem;
+    min-height: 70px;
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  .bubble-menu {
+    padding: 16px 48px;
+    gap: 24px;
+  }
+
+  .bubble-menu .bubble {
+    --bubble-size: 64px;
+  }
+
+  .bubble-menu .logo-content {
+    width: 160px;
+    font-size: 18px;
+  }
+
+  .bubble-menu .menu-line {
+    width: 30px;
+    height: 3px;
   }
 }
